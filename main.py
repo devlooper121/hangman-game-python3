@@ -1,4 +1,4 @@
-# importing modules
+# importing modules inbuilt and user define
 import random
 import hangman_art
 import hangman_word
@@ -15,10 +15,6 @@ len_of_word = len(chosen_word)
 lives = 6
 # extra feature optional
 incorrect_guess = []
-## hint_number = 2
-
-# Test code
-# print(f"chosen word is {chosen_word}")
 
 # print logo of game
 print(logo)
@@ -41,11 +37,11 @@ while not end_of_game:
                 display[i] = guess
         # user exprience
         if guess in chosen_word:
-            print("\nwhoooooho you are winning")
+            print("\nWhoooooho you are winning")
     # user experience
     if guess in incorrect_guess:
         print("\nHey! you'r repeating your mistakes.")
-        print("so, I'm not taking your life!")
+        print("So, I'm not taking your life!")
         
     else:
         # FOR WRONG CASE LOOSE LIFE
@@ -56,18 +52,12 @@ while not end_of_game:
             # puttin in incorrect guess in list
             incorrect_guess.append(guess)
             # user exprience
-            print(f"Oopps! '{guess}' not in word.")
+            print(f"Oopps! this letter '{guess}' not in word.")
             # losing condition
             if lives == 0:
                 end_of_game = True
-                print("\nyou loose!")
-                print(f"\nyou dummy word was... \n: '{chosen_word}'")
-#     # if len(incorrect_guess)>=3 and hint_number >0:
-#     #         print(f"you have '{hint_number}' hint left.")
-#     #         want_hint = input("Want a little hint ? yes or no : ").lower()
-#     #         if want_hint[0] == 'y':
-#     #             print(f"your little help is {random.choice(chosen_word)} ")
-#     #         hint_number -= 1
+                print("\nYou loose!")
+                print(f"\nYou dummy word was... \n: '{chosen_word}'")
 
     # conditin of winning
     if "_" not in display:
@@ -76,6 +66,3 @@ while not end_of_game:
     
     
     print(f"{' '.join(display)}")
-
-# print(f"\nall the correct guess are :{','.join(correct_guess)}")
-# print(f"\nall the incorrect guess are :{','.join(incorrect_guess)}")
